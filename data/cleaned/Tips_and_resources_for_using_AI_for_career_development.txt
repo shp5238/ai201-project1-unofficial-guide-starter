@@ -1,0 +1,404 @@
+Tips and resources for using Generative AI for Career
+Development – USD Career Development Center
+
+The world of work is evolving faster than ever, and new technologies are reshaping how
+we explore, learn, connect, and prepare for our futures. This guide offers practical
+resources and tips to help you leverage Generative AI ethically, thoughtfully, and
+effectively as you explore career options, build skills, and prepare and embark on your
+career endeavors. The AI tools and guides provided are powerful resources designed
+for skill development and content support. They are here to help you explore, refine,
+and research; they are not a replacement for your personal effort, work, critical thinking,
+or the professional advice of our Career Development Center staff.
+
+The University of San Diego Career Development Center does not guarantee the
+factual accuracy, completeness, or professional suitability of any AI-generated
+output. You are solely responsible for verifying all information, editing all content,
+and for the final integrity, accuracy, and outcomes of all materials,
+correspondence, or activities for employment, career related, or other purposes.
+
+1.​ Why Use AI in Your Career Journey?
+●​ Enhance your preparation: AI can help you practice, get feedback, and
+sharpen your career journey.
+●​ Time saving: efficiency and scalability
+●​ Tapping into the vast data that AI is ready to synthesize: For example, job
+market and industry research, idea generation, etc.
+●​ Simulation of different audiences: recruiters, hiring managers, Applicant
+Tracking Systems (ATS), etc.
+●​ Skill gap identification and personalized recommendations
+●​ Language and writing support. AI can help you edit and polish your
+application materials, such as your resume and cover letter, and offer
+feedback on tone, clarity, and structure.
+
+2.​ How can AI help me in my job search?
+●​ Resume and cover letter editing and tailoring
+●​ Assistance with other job search correspondence, such as thank-you
+notes and networking communications.
+●​ Interview preparation, mock interview Q&As
+
+●​ Career exploration and industry/job market research
+
+3.​ Limitations, Ethics, and Things to Consider
+●​ AI has biases and makes mistakes
+●​ Privacy and data security
+●​ Over-reliance or loss of authenticity
+●​ Academic integrity and professional ethics
+●​ Critical thinking is still essential – AI should complement, not replace, your
+judgment, creativity, and own voice
+●​ Organization policies about applicants using AI
+
+4.​ General Tips​
+
+●​ Be specific in your prompts:
+AI tools are trained on massive datasets and can provide highly tailored
+insights—but only if you’re clear and detailed in your request. Include your
+goals, audience, tone, and relevant background.​
+
+●​ Use your own voice:
+AI can assist with structure, grammar, and clarity, but your writing should
+still reflect your authentic tone, values, and personality—especially in
+cover letters, resumes, correspondence, or interview prep.​
+
+●​ Iterative Prompting:
+You don’t have to get everything right in one try. Ask follow-up questions
+like: “Can you make this more concise?,” or “Refine this in a more
+conversational tone.”​
+
+●​ Always carefully review and edit AI responses:
+AI tools are language models that can sometimes make factual errors
+(“hallucinations”) and false information, insert clichés, or overlook
+nuances. Always double-check outputs for accuracy. ​
+
+●​ Protect your privacy:
+Don’t share your full name, phone number, or any other personally
+identifying information in open or public versions of AI tools.​
+
+●​ Research organization policies:
+
+When applying to internships, jobs, or other career opportunities be sure
+to research whether the organization has any policies in regards to
+applicants utilizing AI.
+
+●​ Seek human opinion:
+AI is a powerful tool for editing and brainstorming, but it does not fully
+replace the sentiment and perception of a human reader. After using AI,
+consider bringing your draft to a career counselor, faculty mentor, or
+writing tutor for feedback.
+
+●​ Do the work:
+AI can help you proactively enhance your career development, however it
+is not meant to replace you investing the time and effort to do your own
+work. Leverage AI as an optimization tool rather than replacing your efforts
+and voice. You are responsible for any application materials you submit or
+correspondence you send.
+
+5.​ Which AI Tools to Use
+●​ There are a number of AI tools available to utilize. Google's AI products
+are USD's preferred set of AI tools. Google's AI products are now included
+in USD’s Google license agreement and, when using your USD
+credentials, they are provided to you free of charge.
+●​ Google’s Gemini is now available at no cost to all USD students, faculty
+and staff. Gemini is similar to the paid version of ChatGPT but is more
+secure and protected because it: (a) does not use any USD data to train
+its underlying model; and (b) adheres to USD's privacy and data security
+standards. Gemini can assist with brainstorming, guided learning, content
+refinement, deep research, generating images/videos, coding software
+and more. You can even chat with it and ask questions about your own
+USD email, calendar and documents in Google Drive. Access Gemini
+through a web browser or via its mobile app (iOS and Android).
+●​ Gemini has a built-in Gem called “Career Guide”. It can be found by
+clicking Explore Gems.
+●​ Using non-Google AI products - The use of Google's AI products does not
+mean that you cannot use other tools such as ChatGPT, Claude and
+Perplexity. The main point to remember is that these other tools are not
+secure or protected - that means that you should never share sensitive,
+private, confidential or institutional USD data/information with those
+
+products. The only AI tools you may share sensitive, private, confidential,
+or institutional USD data/information are Google AI tools.
+●​ To learn more about AI at USD visit the AI@USD webpage
+
+6.​ Sample Prompts and Use Scenarios
+●​ Resume and cover letter editing prompt samples
+o​ Resume prompt sample 1
+o​ Resume prompt sample 2
+o​ Resume prompt sample 3
+o​ Cover letter prompt sample
+●​ Interview preparation prompt sample
+●​ Career exploration and industry research prompt sample 1
+●​ Career exploration and industry research prompt sample 2
+
+7.​ Further Reading and Additional Resources
+●​ Navigating the job market with AI: A 2025 guide for job seekers
+●​ Want to use AI as a career coach? Use these prompts
+●​ How Students Should Not Use Generative AI in the Job Search
+
+Sample Prompt 1: Resume editing request
+
+Tips: This is an example of a quick, one-off resume editing prompt. Even in short
+prompts, be sure to include three key elements:
+1.​ A brief summary of your background
+2.​ The intended audience or employer/industry
+3.​ The purpose of the resume (e.g., internship, full-time role, job fair, networking)
+While AI tools draw from massive datasets and can offer helpful guidance, the more
+specific your prompt is, the more accurate and relevant the response will be.
+
+Example:
+I am a third year Accounting major applying for summer internships with the Big4
+accounting firms. This is a resume for the accounting recruitment fair, and I
+would like you to advise me from the perspective of a college recruiter from a big
+accounting firm.
+
+Sample Prompt 2: Resume editing request – use delimiters to create a reusable
+template
+
+Tips: ###s (delimiters) help structure your prompt by clearly labeling different sections,
+such as ###My Background or ###Target Audience. While optional, these markers
+make your prompt easier for AI to interpret and respond to accurately. They also allow
+you to build reusable templates for common tasks, such as resume reviews or cover
+letter drafts. Using clear delimiters improves clarity, especially when your prompt
+includes multiple parts or detailed instructions.
+
+Example:
+###Who Am I: I am a sophomore Electrical Engineering major
+
+###What Am I Doing: Applying for an Electrical Engineering internship position at
+ABCcom
+
+###My Audience: ABCcom college recruiter and likely Applicant Tracking System
+(ATS) screening
+
+###AI Perspective: Assume the perspective of an experienced college recruiter from a
+large tech company such as ABCcom
+
+###Specific Goals: Besides matching keywords and key skills, highlight my
+transferable experience since I haven’t had internships before
+
+###Job Description: [copy/paste job description, especially the responsibilities and
+requirements/qualifications]
+
+###My Resume: [copy/paste the content of your resume. Omit your name, contact
+information and other personal information]
+
+Sample Prompt 3: Resume Summary/Profile creation
+
+Tips: If you have extensive work experience, adding a “Summary” section at the top of
+your resume can help highlight your most relevant skills and qualifications—especially
+those aligned with the job you’re targeting.
+When asking AI to help you write this summary, be sure to provide:
+●​ The format you want (e.g., brief paragraph, bullet points, or a combination)
+●​ The desired length or word count
+
+●​ The job description and key qualifications for the role you're applying to
+The more context you give, the more tailored and effective the summary will be.
+
+Delimiters: ###s (delimiters) help structure your prompt by clearly labeling different
+sections, such as ###My Background or ###Target Audience. While optional, these
+markers make your prompt easier for AI to interpret and respond to accurately. They
+also allow you to build reusable templates for common tasks, such as resume reviews
+or cover letter drafts. Using clear delimiters improves clarity, especially when your
+prompt includes multiple parts or detailed instructions.
+
+Example:
+###Intention: Create a brief, 80-word “Summary” section of my resume, highlighting
+most relevant skills that match the specific job that I am applying for.
+
+###Background: I have 10 years of experience in software development and now I am
+completing a master’s degree in Applied Artificial Intelligence. I want to highlight my
+[areas of relevant expertise, coursework, etc.].
+
+###Job Description: [copy/paste job description, especially the responsibilities and
+requirements/qualifications]
+
+###My Resume: [copy/paste the content of your resume. Omit your name, contact
+information and other personal information]
+
+Prompt Sample 4: Cover Letter Optimization
+
+Tips: Similar to resume optimization, the AI can most effectively optimize your cover
+letter if you provide specific background information such as who you are, the purpose
+and the audience of the letter, and the specific company and position that you are
+applying to. To maintain your own voice and writing style, it is best to provide your rough
+draft in the prompt instead of asking AI to write the letter from scratch. Use AI as a
+writing assistant, not the writer.
+
+Delimiters: ###s (delimiters) help structure your prompt by clearly labeling different
+sections, such as ###My Background or ###Target Audience. While optional, these
+markers make your prompt easier for AI to interpret and respond to accurately. They
+also allow you to build reusable templates for common tasks, such as resume reviews
+or cover letter drafts. Using clear delimiters improves clarity, especially when your
+prompt includes multiple parts or detailed instructions.
+
+Example:
+###Purpose: Optimizing my cover letter for my summer research application
+
+###Background: I am a third year Biology major with prior experience conducting
+research on campus. This is the first time I am applying for a research position with a
+biotech company
+
+###Perspective: Advise me as if you are a recruiter from a major biotech company,
+especially with experience recruiting interns or entry level research positions.
+
+###Tone and style: I want to sound personable and authentic, but still professionally
+appropriate for the biotech industry. Please try to keep my original voice while providing
+editing suggestions.
+
+###Job Description: [copy/paste job description, especially the responsibilities and
+requirements/qualifications]
+
+###My Cover Letter: [copy/paste the draft of your cover letter. Omit name and personal
+information]
+
+Prompt Sample 5: Interview Preparation
+
+Tips: When using AI to help you prepare for an interview, be sure to include:
+●​ Basic information about yourself, the employer, and the position
+●​ The interview format (e.g., phone screen, panel, behavioral, technical)
+●​ The type of questions or topics you want to practice
+You can also tell the AI how you'd like to practice—for example:
+●​ General interview tips
+●​ Mock Q&A, one question at a time
+●​ Feedback on your sample answers
+The more specific you are, the more effective and tailored your practice session will be.
+
+Delimiters: ###s (delimiters) help structure your prompt by clearly labeling different
+sections, such as ###My Background or ###Target Audience. While optional, these
+markers make your prompt easier for AI to interpret and respond to accurately. They
+also allow you to build reusable templates for common tasks, such as resume reviews
+or cover letter drafts. Using clear delimiters improves clarity, especially when your
+prompt includes multiple parts or detailed instructions.
+
+Example:
+###About me: graduating senior, Architecture major, [summarize relevant skills], had
+one internship with a construction company prior.
+
+###About the Organization: XYZ company, a construction and renovation contractor
+specializing in hospitals and office buildings.
+
+###The position: Project Coordinator position in the Renovation department.
+
+###Format: This is a second round, in-person interview with a panel of 4 interviewers.
+
+###Audience: The panel includes the hiring manager (Project Manager), a team
+member from the same department (Project Coordinator), the department head (VP of
+Project Operations), and an HR specialist.
+
+###Perspective: When coaching and advising me, please prioritize the perspective of
+the hiring manager.
+
+###Practice: I would like to practice behavioral interview questions and STAR
+storytelling. Please read the following job descriptions and come up with 3 likely
+behavioral questions. Let’s practice one question at a time – you ask, I answer, you
+critique, and repeat.
+
+###Job Description: [copy/paste job description, especially the responsibilities and
+requirements/qualifications]
+
+###My Resume: [copy/paste the content of your resume. Omit your name, contact
+information and other personal information]
+
+Prompt Sample 6: Career exploration and industry research
+
+Tips: Career exploration can feel open-ended, and you may not always have a specific
+job title or description in mind. To make your conversation with AI more focused and
+useful, start by sharing some key information about yourself, such as:
+●​ Background (e.g., major, experience)
+●​ Your interests, skills, values, and needs
+●​ Any specific preferences (e.g., location, work-life balance, further education,
+immediate transition or long-term planning)
+
+Then, clarify what you want AI to help with. For example:
+●​ Identifying job roles that match your current skills
+●​ Exploring industries aligned with your interests and values
+●​ Understanding skill gaps for a role or industry you’re curious about
+The more direction you give, the more tailored and insightful the conversation will be.
+
+Delimiters: ###s (delimiters) help structure your prompt by clearly labeling different
+sections, such as ###My Background or ###Target Audience. While optional, these
+markers make your prompt easier for AI to interpret and respond to accurately. They
+also allow you to build reusable templates for common tasks, such as resume reviews
+or cover letter drafts. Using clear delimiters improves clarity, especially when your
+prompt includes multiple parts or detailed instructions.
+
+Example:
+###About me: A marketing major, senior, with some experience in social media
+marketing through internships and student organization work. Now I am interested in
+exploring careers in branding and product marketing, and how my previous experience
+and marketing coursework can help me connect to my future career.
+
+###Interest: I like working with people and I like teaching people new concepts. I would
+like to explore where and how my skills may be valuable in marketing settings.
+
+###Skills: I have done social media internships and know how to create content, run
+campaigns, and look at analytics. I’m good at identifying trends and explaining ideas
+clearly to different audiences.
+
+###Values for an ideal job: I want a job where I can help build brands that actually
+connect with people. Working with a team is really important to me, and I like places
+that let you be creative and try new things. I also care about working somewhere that’s
+honest, ethical, and values its people.
+
+###Needs for an ideal job: Prefer West coast, [ideal salary range] to start, hybrid or
+flexible work schedule, and opportunities for career growth. I am open to entry level
+marketing jobs that help me build the right skills.
+
+###Hope to learn: I am just starting to figure out what’s out there beyond social media
+management. I want to explore different entry level roles in branding, product marketing,
+or marketing strategy. Later, I can narrow it down to specific industries, companies, and
+job titles.
+
+###Perspective: Please converse with me as if you are an experienced career coach
+who has lots of experience in the marketing field. Also please add perspective as a
+corporate recruiter who recruits for related roles for new college grads.
+
+Prompt Sample 7: Career exploration and industry research (early college)
+Tips: Career exploration can feel open-ended, especially early in college, and you
+might not have a clear idea of a specific job or career path yet. To make your
+conversation with AI more useful, you can start by sharing a few things about yourself,
+such as:
+●​ Background: your major, any classes you enjoy, and any experiences so far
+(part-time jobs, clubs, volunteer work, hobbies).
+●​ Interests, skills, values, and needs: even if you’re not totally sure, mention what
+excites you, what you enjoy doing, or what kind of environment you like.
+●​ Preferences: things like location, work-life balance, the possibility of grad school,
+or whether you want to focus on immediate opportunities versus long-term
+planning.
+Then, let AI know how you want it to help. For example, you could ask it to:
+●​ Explore industries you might enjoy based on your values or hobbies.
+●​ Identify skills you might want to develop if you’re curious about a field, without
+needing to commit to a specific role yet.
+●​ Or just have an open-ended conversation about how your skills and interests
+may connect to different paths in the career world.
+The more direction you give, the more tailored and insightful the conversation will be.
+
+Delimiters: ###s (delimiters) help structure your prompt by clearly labeling different
+sections, such as ###My Background or ###Target Audience. While optional, these
+markers make your prompt easier for AI to interpret and respond to accurately. They
+also allow you to build reusable templates for common tasks, such as resume reviews
+or cover letter drafts. Using clear delimiters improves clarity, especially when your
+prompt includes multiple parts or detailed instructions.
+
+Example:
+###About me: I thought I would be pre-med for years, but the more I think about med
+school and being a doctor, the more doubt I have. I am doing ok in my bio/biochem
+classes but I just don't enjoy them and I am not sure if I want to continue this path.
+
+###Interest: I like helping people and solving problems. I have been playing sports
+since I was young, and health and fitness are topics that I am interested in.
+
+###Skills: I haven't done much work except hospital volunteering. I think I am good at
+working with people and I am ok in science and labs too.
+
+###Values for an ideal job: Helping people is essential. I would like to work in an
+environment where I can do the right things and make an impact.
+
+###Needs for an ideal job: Good pay and job security. I don't mind extra schooling to
+get there. I like working hard and like to keep myself busy as long as my job keeps me
+motivated.
+
+###Hope to learn: I just started to consider anything outside pre-med recently. I would
+like to chat about whether med-school/medicine is right for me, and what other careers
+may be potential good matches to consider.
+
+###Perspective: I would like to have a more conversational and interactive discussion
+about careers. I would like to learn the perspectives from people who practice medicine
+and other career fields that we are exploring.

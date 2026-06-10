@@ -60,8 +60,14 @@ I will have a fixed chunk size at 200 tokens which is 150 words.
 Some documents like resumes are dense and very structured, so the smaller chunks ensure that the AI extracts the relevant information accurately without confusing contexts. Even other documents are guides often arranged in bullet points, so it doesn't make sense to have extremely large chunks. 
 
 **Preprocessing before chunking**
+Each PDF is extracted with PyMuPDF (chosen over pdfplumber, which scrambled the glyph order on the `tcg-*` career-guide PDFs — e.g. "insgtr ongleyn" instead of "I strongly"). The raw extracted text is saved to `data/raw/` *before* any cleaning so the originals stay recoverable. Cleaning then: strips stray HTML tags, rejoins words split by a hyphen across a line break, collapses runs of spaces/tabs, trims trailing whitespace per line, and collapses 3+ blank lines into a single paragraph break. Cleaned text is saved to `data/cleaned/`. Token counts are measured with the all-MiniLM-L6-v2 tokenizer (the same one the embedder uses), so a "200-token chunk" means 200 tokens as the embedding model sees them.
+
+*Known limitation:* `tcg-interview-preparation.pdf` includes a sample thank-you note rendered in a decorative handwriting font whose embedded Unicode map is broken (it maps `a`→`q`, etc.). Every PDF text extractor returns substituted letters for it ("Thqnk you /ortqkin'1..."); only OCR could recover it. The readable prose sections on thank-you notes extract correctly, so this affects only the decorative sample, not the guidance itself.
+
+*Website sources:* RoadTrip Nation and CareerShift are interactive JavaScript apps with no useful prose to embed, so they are **not chunked**. They are registered in `data/resources.json` (name, URL, description, topic keywords) so the generation stage can recommend them when a user asks a related question.
 
 **Final chunk count:**
+199 chunks across the 8 local PDFs.
 
 
 ---

@@ -1,0 +1,69 @@
+FIRST LAST 
+San Diego, CA  ·  (619) 260-4654  ·  name@sandiego.edu 
+ 
+ 
+EDUCATION 
+University of San Diego Shiley-Marcos School of Engineering​
+Graduation: December 2023           
+BS/BA in Mechanical Engineering​
+GPA 3.2 
+Minor in Mathematics and Finance​
+ 
+ 
+SKILLS 
+Software: Matlab, AutoCAD, SolidWorks and programming in C & R 
+Machine Shop: Lathe, mill and drill press 
+Languages: French (intermediate) 
+ 
+PROJECT 
+Engineering Senior Design Project​
+   Fall 2022 
+●​
+Collaborated on a multidisciplinary team to develop an AC system using waste heat of an IC engine 
+●​
+Designed the heat exchanger, project layout, and SolidWorks drawings 
+●​
+Presented findings as poster during USD Engineering and Computing Showcase 
+ 
+EXPERIENCE  
+LabelTek​
+San Diego, CA 
+Intern​
+Summer 2023 
+●​
+Collaborated with LabelTek’s engineering team to reduce errors in thermal transfer printed labels 
+●​
+Delegated projects to five qualified team members including error identification, rejection automation, 
+mechanical analysis, electrical analysis, manufacturing, testing and implementation 
+●​
+Leveraged Matlab for controls and calculations, SolidWorks for finite element analysis and manufacturing, 
+and R for programming to finalize formal documentation 
+ 
+Set the Facts Inc.​
+San Francisco, CA 
+Consulting Intern​
+Summer 2022 
+●​
+Gained insight into various client workflows like global asset management, hedge funds, global business 
+and banking 
+●​
+Fostered client-facing skills via development and customization of portfolio analytics to add value to user 
+workflows 
+●​
+Streamlined research and presented performance analytics to managers and consultants as a 
+culmination of internship 
+ 
+Shiley-Marcos School of Engineering​
+ San Diego, CA 
+Teaching Assistant ​
+Fall 2021 
+●​
+Graded all levels of work for Introduction to Engineering Programming focusing on programming in C 
+language and working with a Unix operating system 
+●​
+Consulted with the professor about effective teaching methods and adjusted approach to meet student 
+needs during fully remote instruction 
+ 
+ 
+ 
+ 

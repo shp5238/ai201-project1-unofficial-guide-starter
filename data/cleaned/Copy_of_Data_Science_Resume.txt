@@ -1,0 +1,73 @@
+[Your Name]
+Phone | Email | Location | LinkedIn, GitHub, and/or portfolio site
+
+EDUCATION
+University of San Diego​​
+​
+​
+​
+​
+​
+​
+San Diego, CA
+Master of Science in Applied Data Science​
+​
+​
+​
+​
+May 2023
+Relevant Coursework: Text Mining, Cloud Computing, Data Engineering, Time Series Analysis, Data Science for Business,
+Machine Learning and Deep Learning, Predictive Modeling, Data Mining, Data Science Programming, Probability and
+Statistics
+
+Bachelor of Science/Bachelor of Arts in Industrial and Systems Engineering​
+May 2021
+
+SKILLS
+Certifications: Six Sigma Green Belt
+Technical Skills: SQL, Python, R, AWS, Tableau, Git, Statistics, Data Mining, Machine Learning
+Languages: Spanish (Native), English (Fluent)
+
+PROJECTS
+Customer Churn Prediction and Retention Strategy, Data Mining Class​ ​
+Fall 2022
+●​ Developed a predictive model to forecast customer churn for a subscription-based business.
+●​ Utilized text mining for sentiment analysis, implemented machine learning algorithms, and recommended a
+targeted retention strategy. Reduced churn rate by 15% and increased customer retention by 20%.
+
+Sales Forecasting using Time Series Analysis, Time Series Analysis Class ​
+Spring 2022
+●​ Utilized time series analysis techniques to forecast future sales for a retail company.
+●​ Cleaned and analyzed historical sales data, selected appropriate models, and evaluated forecast accuracy.
+Enabled optimized inventory management, resulting in a 10% reduction in stockouts and improved
+decision-making.
+
+PROFESSIONAL EXPERIENCE
+Data Scientist Intern, XYZ Corporation, Sunnyvale, CA ​ ​
+​
+​
+May 2022 - Aug. 2022
+●​ Utilized advanced statistical analysis techniques to analyze customer segmentation and purchasing patterns,
+processing a dataset of 50 million records.
+●​ Developed a predictive model using machine learning algorithms, achieving a 75% accuracy rate in forecasting
+customer churn and supporting retention efforts.
+●​ Conducted A/B tests to evaluate the effectiveness of marketing campaigns, resulting in a 15% increase in
+click-through rates and a 10% boost in conversion rates.
+●​ Collaborated with cross-functional teams to implement a data pipeline and automate data processing, reducing
+data processing time by 50% and improving overall efficiency.
+
+LEADERSHIP & COMMUNITY SERVICE
+San Diego Chapter Vice President, National STEM Student Association ​​
+Sept. 2020 - May 2021
+●​ Oversaw the operations of a chapter of a national STEM Student Association and a $40,000 annual budget,
+representing the interests of over 500 student members.
+●​ Spearheaded the planning and execution of various STEM-focused events, including workshops, seminars, and
+networking sessions, attracting an average attendance of 200 participants per event.
+
+Volunteer Tutor, STEM ABC Outreach Program, San Diego, CA​ ​
+​
+May 2019 - May 2021
+●​ Provided weekly math and science tutoring sessions to students from under-resourced communities, promoting
+academic success and fostering interest in STEM fields.
+●​ Collaborated with a team of tutors to develop customized study materials and lesson plans, resulting in a 10%
+improvement in student grades and a higher participation rate in STEM-related activities.

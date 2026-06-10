@@ -97,6 +97,8 @@ Some documents like resumes are dense and very structured, so the smaller chunks
 
 2. Another challenge is that important information may span multiple adjacent chunks. If only one chunk is retrieved, the answer may be incomplete or missing critical context. I'll consider increasing chunk overlap to reduce this risk but cannot eliminate it entirely.
 
+> **Note from M3 (chunk inspection):** Confirmed in practice. Inspecting 5 representative chunks showed every chunk starts and/or ends mid-sentence (e.g. a resume chunk ended `"...May 2022 - Aug. 202"`, an AI-tips chunk ended `"###Job Description: [copy/paste"`), because the fixed 200-token window cuts across sentence and section boundaries. The 100-token overlap is what mitigates this — the clipped tail of one chunk reappears at the start of the next — so the information is recoverable as long as retrieval returns the neighboring chunk. Two smaller, lower-impact artifacts also showed up: embedded PDF page numbers (e.g. `56 57`) sprinkled into the text, and letter-spacing noise isolated to `tcg-networking-informational-interviews.pdf` (e.g. `"ce llphone"`, `"ski lled"`). Separately, a sample thank-you note in `tcg-interview-preparation.pdf` is rendered in a decorative handwriting font with a broken Unicode map (`a`→`q`), so it extracts as garbled text that no text extractor can recover — but the readable prose on thank-you notes extracts fine elsewhere.
+
 ---
 
 ## Architecture
