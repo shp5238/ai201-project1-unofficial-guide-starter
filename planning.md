@@ -62,10 +62,13 @@ Some documents like resumes are dense and very structured, so the smaller chunks
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
+all-MiniLM-L6-v2 via sentence-transformers. It runs locally with no API key and no rate limits, embeds fast on CPU, and its 384-dim vectors are a good fit for a small corpus (~200 chunks). Stored in ChromaDB using cosine distance.
 
 **Top-k:**
+5. Each chunk is only ~200 tokens, so a single chunk rarely holds a full answer; retrieving 5 gives the LLM enough surrounding context (and recovers content split across chunk boundaries — see Anticipated Challenge 2) without diluting the prompt with off-topic material.
 
 **Production tradeoff reflection:**
+If cost weren't a constraint, I'd weigh a larger embedding model (e.g. an OpenAI or Voyage embedding) for better accuracy on domain-specific/acronym-heavy resume text, and a longer context window so each chunk could carry more surrounding context. MiniLM's 256-token input limit and 384 dimensions trade some accuracy for speed and zero cost. For mostly-English career documents that tradeoff is reasonable, but a multilingual model would matter if the corpus included non-English résumés. The main latency/accuracy decision would be local CPU embedding (free, slower, private) vs. an API embedding (faster at scale, higher accuracy, but per-call cost and data leaving the machine).
 
 ---
 
