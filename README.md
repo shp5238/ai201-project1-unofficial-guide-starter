@@ -27,16 +27,17 @@ This knowledge is valuable because students often struggle to locate information
 
 | # | Source | Type | Description | URL or File Path |
 |---|--------|------|-------------|------------------|
-| 1 |Career Development Plan |PDF |Build an action plan for this semester for your career journey. | |
-| 2 |A.I. Tips and Resources for Career Development |PDF |Guide for using A.I. in your career development journey. | |
-| 3 |A.I. Tips and Resources for Career Development: |PDF |Guide for using A.I. in your career development journey. | |
-| 4 |RoadTrip Nation |URL |Watch stories from real people in a variety of fields to get advice and explore careers |https://roadtripnation.com/edu/sandiego |
-| 5 |How to Prepare for a Job Interview |PDF |Definitive guide to preparing for a job interview | |
-| 6 |Networking, LinkedIn, Professional Organizations, and Informational Interviews |PDF |A guide to building professional connections, leveraging LinkedIn, engaging with industry organizations, and conducting informational interviews to explore career paths and opportunities. | |
-| 7 |CareerShift |URL |Search listings from multiple job boards, make company lists, and find key contact information. |https://www.careershift.com/?sc=Sandiego |
-| 8 |Data Science Resume |PDF | DS resume| |
-| 9 |Engineering Resume #1  |PDF |Engineering Resume Sample 1 | |
-| 10 |Engineering Resume #2 |PDF | Engineering Resume Sample 2 | |
+| 1 |Career Development Planning Worksheet |PDF |Build an action plan for this semester for your career journey. |`USD sources/Career-Development-Planning-Worksheet.pdf` |
+| 2 |A.I. Tips and Resources for Career Development |PDF |Guide for using A.I. in your career development journey. |`USD sources/Tips and resources for using AI for career development.pdf` |
+| 3 |RoadTrip Nation |URL |Watch stories from real people in a variety of fields to get advice and explore careers. Surfaced as a recommended link, not chunked. |https://roadtripnation.com/edu/sandiego |
+| 4 |How to Prepare for a Job Interview |PDF |Definitive guide to preparing for a job interview (behavioral questions, thank-you notes, offers). |`USD sources/tcg-interview-preparation.pdf` |
+| 5 |Networking, LinkedIn, Professional Organizations, and Informational Interviews |PDF |A guide to building professional connections, leveraging LinkedIn, engaging with industry organizations, and conducting informational interviews to explore career paths and opportunities. |`USD sources/tcg-networking-informational-interviews.pdf` |
+| 6 |CareerShift |URL |Search listings from multiple job boards, make company lists, and find key contact information. Surfaced as a recommended link, not chunked. |https://www.careershift.com/?sc=Sandiego |
+| 7 |Data Science Resume |PDF |Sample Data Science résumé. |`USD sources/Copy of Data Science Resume.pdf` |
+| 8 |Engineering Resume #1 |PDF |Engineering résumé sample 1. |`USD sources/Copy of Engineering Resume #1.pdf` |
+| 9 |Engineering Resume #2 |PDF |Engineering résumé sample 2. |`USD sources/Copy of Engineering Resume #2.pdf` |
+
+*Sources: 7 local PDFs (chunked) + 2 website tools (surfaced as recommended links, not chunked). The original source list double-counted the A.I. guide; this table lists the 9 distinct sources actually in the system.*
 
 
 ---
@@ -67,7 +68,7 @@ Each PDF is extracted with PyMuPDF (chosen over pdfplumber, which scrambled the 
 *Website sources:* RoadTrip Nation and CareerShift are interactive JavaScript apps with no useful prose to embed, so they are **not chunked**. They are registered in `data/resources.json` (name, URL, description, topic keywords) so the generation stage can recommend them when a user asks a related question.
 
 **Final chunk count:**
-199 chunks across the 8 local PDFs.
+130 chunks across the 7 local PDFs.
 
 
 ---
@@ -171,7 +172,7 @@ Sources are attached **programmatically**, not by the model. After generation, `
 
 **Instance 1 — Ingestion and chunking (Milestone 3)**
 * *What I gave the AI:* My Documents list and Chunking Strategy section (200-token chunks, 100-token overlap, with rationale), along with the Architecture diagram. I asked it to create a script that loads my PDFs, saves the raw text before cleaning, cleans the text, and then chunks it.
-* *What it produced:* [ingest.py](ingest.py) containing a load_documents() function and a chunk_text() function. The script outputs chunks in the format {text, source, chunk_index} and stores them in data/chunks.json (199 chunks total).
+* *What it produced:* [ingest.py](ingest.py) containing a load_documents() function and a chunk_text() function. The script outputs chunks in the format {text, source, chunk_index} and stores them in data/chunks.json (130 chunks total).
 * *What I changed or overrode:* (1) I had it count tokens using the actual all-MiniLM-L6-v2 tokenizer instead of estimating based on word count, so the 200-token chunk size matches what the embedding model actually receives. (2) After reviewing sample chunks, I noticed that text from two guide PDFs was not being extracted correctly, so I instructed it to switch from pdfplumber to PyMuPDF. (3) I decided not to follow the original plan of scraping the two URLs and instead treated them as a separate resource registry, since they did not need to be chunked.
 
 **Instance 2 — Embedding, retrieval, and grounded generation (Milestones 4–5)**

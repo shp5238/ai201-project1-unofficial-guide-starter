@@ -62,7 +62,7 @@ Some documents like resumes are dense and very structured, so the smaller chunks
      support, accuracy on domain-specific text, latency? -->
 
 **Embedding model:**
-all-MiniLM-L6-v2 via sentence-transformers. It runs locally with no API key and no rate limits, embeds fast on CPU, and its 384-dim vectors are a good fit for a small corpus (~200 chunks). Stored in ChromaDB using cosine distance.
+all-MiniLM-L6-v2 via sentence-transformers. It runs locally with no API key and no rate limits, embeds fast on CPU, and its 384-dim vectors are a good fit for a small corpus (~130 chunks). Stored in ChromaDB using cosine distance.
 
 **Top-k:**
 5. Each chunk is only ~200 tokens, so a single chunk rarely holds a full answer; retrieving 5 gives the LLM enough surrounding context (and recovers content split across chunk boundaries — see Anticipated Challenge 2) without diluting the prompt with off-topic material.
