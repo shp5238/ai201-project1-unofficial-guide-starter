@@ -14,6 +14,9 @@
      Example: "Student reviews of CS professors at [university] — useful because official
      course descriptions don't reflect teaching style, exam difficulty, or workload." -->
 
+The University Career Assistant is a Retrieval-Augmented Generation (RAG) system that provides grounded answers using university career-center resources. The system covers topics such as resume writing, cover letters, internships, career fairs, networking, LinkedIn profiles, interview preparation, and mentorship opportunities.
+This knowledge is valuable because students often struggle to locate information scattered across multiple PDFs, webpages, guides, and FAQs maintained by the career center. Although the information exists on the official website, it is fragmented across many lengthy resources and can be difficult to navigate quickly. The Assistant centralizes these resources and provides cited answers based on official university materials rather than generic career advice.
+
 ---
 
 ## Document Sources
@@ -22,18 +25,19 @@
      Be specific: include URLs, subreddit names, forum thread titles, or file names.
      Aim for variety — sources that together cover different subtopics or perspectives. -->
 
-| # | Source | Type | URL or file path |
-|---|--------|------|-----------------|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-| 5 | | | |
-| 6 | | | |
-| 7 | | | |
-| 8 | | | |
-| 9 | | | |
-| 10 | | | |
+| # | Source | Type | Description | URL or File Path |
+|---|--------|------|-------------|------------------|
+| 1 |Career Development Plan |PDF |Build an action plan for this semester for your career journey. | |
+| 2 |A.I. Tips and Resources for Career Development |PDF |Guide for using A.I. in your career development journey. | |
+| 3 |A.I. Tips and Resources for Career Development: |PDF |Guide for using A.I. in your career development journey. | |
+| 4 |RoadTrip Nation |URL |Watch stories from real people in a variety of fields to get advice and explore careers |https://roadtripnation.com/edu/sandiego |
+| 5 |How to Prepare for a Job Interview |PDF |Definitive guide to preparing for a job interview | |
+| 6 |Networking, LinkedIn, Professional Organizations, and Informational Interviews |PDF |A guide to building professional connections, leveraging LinkedIn, engaging with industry organizations, and conducting informational interviews to explore career paths and opportunities. | |
+| 7 |CareerShift |URL |Search listings from multiple job boards, make company lists, and find key contact information. |https://www.careershift.com/?sc=Sandiego |
+| 8 |Data Science Resume |PDF | DS resume| |
+| 9 |Engineering Resume #1  |PDF |Engineering Resume Sample 1 | |
+| 10 |Engineering Resume #2 |PDF | Engineering Resume Sample 2 | |
+
 
 ---
 
@@ -47,12 +51,18 @@
      - What your final chunk count was across all documents -->
 
 **Chunk size:**
+I will have a fixed chunk size at 200 tokens which is 150 words.  
 
 **Overlap:**
+100 tokens
 
 **Why these choices fit your documents:**
+Some documents like resumes are dense and very structured, so the smaller chunks ensure that the AI extracts the relevant information accurately without confusing contexts. Even other documents are guides often arranged in bullet points, so it doesn't make sense to have extremely large chunks. 
+
+**Preprocessing before chunking**
 
 **Final chunk count:**
+
 
 ---
 
