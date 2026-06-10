@@ -85,16 +85,6 @@ Some documents like resumes are dense and very structured, so the smaller chunks
 | 5 |How do I find salary and job outlook information? |Use resources such as O*NET Online and USD Student Outcomes data to research career outlooks, salary expectations, and employment trends for your field of interest. You can also watch informational interviews on Roadtrip Nation to gain insights from professionals and explore different career paths. |
 
 
-
-
-
-
-
-
-
-
-
-
 ---
 
 ## Anticipated Challenges
@@ -118,6 +108,54 @@ Some documents like resumes are dense and very structured, so the smaller chunks
      You'll use this diagram as context when prompting AI tools to implement each stage. -->
 
 ---
+## Architecture
+
+```text
++----------------------+
+| Document Ingestion   |
+| TXT Files / PDFs     |
+| Python Loader        |
++----------+-----------+
+           |
+           v
++----------------------+
+| Chunking             |
+| Custom Chunker       |
+| Fixed Size + Overlap |
++----------+-----------+
+           |
+           v
++----------------------+
+| Embedding +          |
+| Vector Store         |
+| all-MiniLM-L6-v2     |
+| ChromaDB             |
++----------+-----------+
+           |
+           v
++----------------------+
+| Retrieval            |
+| Semantic Search      |
+| Top-K = 5            |
++----------+-----------+
+           |
+           v
++----------------------+
+| Generation           |
+| Groq Llama-3.3-70B   |
+| Grounded Responses   |
++----------------------+
+```
+
+**Tools Used**
+* Document Ingestion: Python file loaders
+* Chunking: Custom Python chunking function
+* Embeddings: all-MiniLM-L6-v2 (Sentence Transformers)
+* Vector Store: ChromaDB
+* Retrieval: ChromaDB semantic similarity search (Top-5)
+* Generation: Groq llama-3.3-70b-versatile
+
+
 
 ## AI Tool Plan
 
@@ -131,8 +169,21 @@ Some documents like resumes are dense and very structured, so the smaller chunks
      "I'll give Claude my Chunking Strategy section and ask it to implement chunk_text()
      with my specified chunk size and overlap" is a plan. -->
 
+
 **Milestone 3 — Ingestion and chunking:**
+Tool: Claude
+Input: My Documents section (local TXT/PDF files in a `/data` folder) + my Chunking Strategy section (chunk size, overlap, rationale) + the Architecture diagram above.
+Expected output: A script with a `load_documents()` function that reads files from disk and cleans them (strips HTML tags, boilerplate, blank lines), and a `chunk_text()` function that splits cleaned text by my specified chunk size and overlap, returning a list of `{text, source}` dicts.
+Verification: Print 5 random chunks and confirm each is readable, self-contained, and free of artifacts. Confirm total chunk count is between 50–2,000.
 
 **Milestone 4 — Embedding and retrieval:**
+Tool: Claude
+Input: My Retrieval Approach section (all-MiniLM-L6-v2, ChromaDB, Top-K = 5) + the chunk schema from Milestone 3 (`{text, source}`) + the Architecture diagram.
+Expected output: An `embed_and_store()` function that embeds chunks with `SentenceTransformer("all-MiniLM-L6-v2")` and upserts them into ChromaDB with `source` and `chunk_index` metadata; and a `retrieve()` function that takes a query string and returns the top-5 chunks with text, source, and distance score.
+Verification: Run 3 evaluation questions through `retrieve()` and confirm returned chunks are on-topic and distance scores are below 0.5.
 
 **Milestone 5 — Generation and interface:**
+Tool: Claude
+Input: My grounding requirement (answer only from retrieved context, decline if not covered) + desired output format (`{answer, sources}`) + the `retrieve()` function signature + the Gradio skeleton from the project instructions + the Architecture diagram.
+Expected output: An `ask()` function that calls `retrieve()`, formats chunks into a context block, sends a grounding-enforcing system prompt to Groq `llama-3.3-70b-versatile`, and returns `{answer, sources}`; and an `app.py` Gradio UI with a question input, answer output, and sources output.
+Verification: Confirm the system prompt explicitly restricts the LLM to retrieved context, sources are appended programmatically (not left to the model), and an out-of-scope question returns a decline instead of a hallucinated answer.
