@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>University of San Diego — Career Assistant</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <!-- Light/dark theme toggle (sun on the light side, moon on the dark side) -->
+  <input type="checkbox" id="theme-toggle" aria-label="light and dark mode toggle" />
+  <label for="theme-toggle" class="toggle">
+    <span class="ico sun" aria-hidden="true">☀</span>
+    <span class="ico moon" aria-hidden="true">☾</span>
+    <span class="slider" aria-hidden="true"></span>
+  </label>
+
+  <!-- Help "?" glass icon — opens the how-to tutorial -->
+  <button id="help-btn" class="glass-btn round" aria-label="How to use this assistant" title="How to use">?</button>
+
+  <main class="page">
+    <h1>University of San Diego — Career Assistant</h1>
+    <p class="subtitle">
+      Ask about resumes, interviews, networking, LinkedIn, internships, and using
+      AI in your career search. Answers are grounded <strong>only</strong> in official
+      USD career-center documents; if the documents don't cover your question, the
+      assistant will say so.
+    </p>
+
+    <div class="panel-head">
+      <button id="clear-chat" class="glass-btn pill" aria-label="Clear chat">Clear chat</button>
+    </div>
+
+    <div id="main-panel" aria-label="Conversation main panel" aria-live="polite">
+      <!-- messages are injected here by app.js -->
+    </div>
+
+    <form class="search" id="chat-form">
+      <input
+        type="text"
+        id="searchbar"
+        name="searchbar"
+        placeholder="Ask anything"
+        aria-label="Search Bar to Query Agent"
+        autocomplete="off"
+      />
+      <button type="submit" class="send-btn" aria-label="Send message">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none"
+             stroke="currentColor" stroke-width="2.2"
+             stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="12" y1="19" x2="12" y2="5"></line>
+          <polyline points="5 12 12 5 19 12"></polyline>
+        </svg>
+      </button>
+    </form>
+
+    <!-- Example questions (kept at the bottom) -->
+    <div class="examples" id="examples" aria-label="Example questions">
+      {% for q in examples %}
+      <button type="button" class="example-chip">{{ q }}</button>
+      {% endfor %}
+    </div>
+  </main>
+
+  <!-- How-to-use tutorial modal -->
+  <div class="modal" id="help-modal" hidden>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="help-title">
+      <button class="modal-close" id="help-close" aria-label="Close">×</button>
+      <h2 id="help-title">How to use</h2>
+      <ol>
+        <li>Type a career question in the box at the bottom and press the send arrow (or hit Enter).</li>
+        <li>The assistant answers <strong>only</strong> from official USD career documents and lists its sources.</li>
+        <li>If your question isn't covered by the documents, it will tell you instead of guessing.</li>
+        <li>Tap an <em>example</em> chip to try a sample question.</li>
+        <li>Use the <strong>Clear chat</strong> button to start over, and the toggle (top-right) for light/dark mode.</li>
+      </ol>
+    </div>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

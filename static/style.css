@@ -1,0 +1,622 @@
+* {
+  /*CSS Reset*/
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /*Da Blues*/
+  --black-blue: #01171e;
+  --dark-blue: #003b70;
+  --medium-blue: #0074c8;
+
+  /*Light BG grad colors*/
+  --light-green: #7fb9a2;
+  --light-magenta: #ae88b6;
+  --light-pink: #c58e93;
+
+  /*Dark BG grad colors*/
+  --dark-green: #367275;
+  --dark-magenta: #8a4735;
+  --dark-red-brown: #8c4c72;
+  --bg-sky-blue: #9cc7e2;
+
+  /* Backgrounds*/
+  --light: radial-gradient(
+      circle at 0% 20%,
+      var(--light-green) 0%,
+      transparent 35%
+    ),
+    radial-gradient(circle at 80% 30%, var(--light-pink) 0%, transparent 40%),
+    radial-gradient(circle at 50% 80%, var(--light-magenta) 0%, transparent 80%),
+    var(--bg-sky-blue);
+
+  --dark: radial-gradient(
+      circle at 0% 20%,
+      var(--dark-green) 0%,
+      transparent 35%
+    ),
+    radial-gradient(circle at 80% 30%, var(--dark-magenta) 0%, transparent 40%),
+    radial-gradient(
+      circle at 50% 80%,
+      var(--dark-red-brown) 0%,
+      transparent 80%
+    ),
+    var(--black-blue);
+  --l-bg: var(--light);
+  --d-bg: var(--dark);
+
+  /* Light Mode Attributes */
+  --l-light-blue: #75bee999; /*99% visible*/
+  --l-text-color: black;
+  --l-h1: linear-gradient(135deg, var(--black-blue), var(--dark-blue));
+  --l-panel-color: rgb(254 255 235 / 10%);
+  --l-ai-chat: rgb(7 35 43 / 20%);
+  --l-thumb: rgb(255 255 255 /20%);
+  --l-scroll-track: linear-gradient(180deg, #ffffff30, #75bee950);
+  --l-inp-text: black;
+  --l-inp: rgb(255 255 255 / 80%);
+  --l-inp-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+  --l-caret: var(--medium-blue);
+  --l-submit: var(--medium-blue);
+  --l-submit-hover: var(--dark-blue);
+  --l-slider-color: rgb(255 255 255 / 90%);
+
+  /* Dark Mode Attributes*/
+  --d-light-blue: #35859799; /*99% opacity*/
+  --d-text-color: white;
+  --d-h1: linear-gradient(135deg, white, var(--bg-sky-blue));
+  --d-panel-color: rgb(1 0 10 / 50%);
+  --d-ai-chat: rgb(1 0 10 / 80%);
+  --d-thumb: #ffffff80;
+  --d-scroll-track: linear-gradient(
+    180deg,
+    rgb(1 0 10 / 80%),
+    var(--d-light-blue)
+  );
+  --d-inp-text: white;
+  --d-inp: rgb(1 0 10 / 80%);
+  --d-inp-shadow: 0px 4px 10px 0px rgba(1, 0, 10, 0.9);
+  --d-caret: var(--bg-sky-blue);
+  --d-submit: var(--d-light-blue);
+  --d-submit-hover: var(--bg-sky-blue);
+  --d-slider-color: rgb(1 0 10 / 70%);
+
+  /* -- Other Common Attributes -- */
+  --font-family: Inter, system-ui, sans-serif;
+  --border-rad: 10px;
+  --round-border-rad: calc(var(--border-rad) * 2);
+  --screen-width: clamp(320px, 65%, 1200px); /*diff screens*/
+
+  /* Active Tokens (overridden on :checked)*/
+  --panel-color: var(--l-panel-color);
+  --ai-chat: var(--l-ai-chat);
+  --user-chat: var(--l-light-blue);
+  --thumb: var(--l-thumb);
+  --scroll-track: var(--l-scroll-track);
+  --inp-text: var(--l-inp-text);
+  --inp: var(--l-inp);
+  --inp-shadow: var(--l-inp-shadow);
+  --caret: var(--l-caret);
+  --submit: var(--l-submit);
+  --submit-hover: var(--l-submit-hover);
+  --h1: var(--l-h1);
+  --page-bg: var(--light-bg);
+  --slider-bg: var(--l-slider-color);
+
+  /* -- Toggle Styling -- */
+  /* -Toggle geometry- */
+  --toggle-top: 20px;
+  --toggle-right: 20px;
+  --toggle-width: 54px;
+  --toggle-height: 30px;
+  --toggle-radius: 999px;
+  --toggle-z: 1000;
+  /* -Toggle glass surface- */
+  --toggle-bg: rgb(255 255 255 / 10%);
+  --toggle-bg-checked: rgb(255 255 255 / 18%);
+  --toggle-border: rgb(255 255 255 / 15%);
+  --toggle-backdrop: blur(8px);
+  /* -Slider- */
+  --slider-size: 24px;
+  --slider-offset: 3px;
+  --slider-travel: 24px;
+  --slider-shadow: 0 2px 8px rgb(0 0 0 / 15%);
+  /* -Motion- */
+  --transition-speed: 1s;
+  --transition-ease: ease;
+  --slider-curve: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--l-bg);
+  font-family: var(--font-family);
+  color: var(--l-text-color);
+}
+
+#main-panel {
+  background-color: var(--panel-color);;
+  width: var(--screen-width);
+  min-height: 10vh;
+  max-height: 60vh;
+  margin: 0 auto 2rem auto;
+  border-radius: var(--border-rad);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  overflow-y: auto;
+  padding: 1.5rem; /*adds space inside*/
+  box-sizing: border-box; /*doesn't add outside width*/
+
+  padding-right: calc(1.5rem - 10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#main-panel::-webkit-scrollbar {
+  width: 10px;
+}
+
+#main-panel::-webkit-scrollbar-thumb {
+  background: var(--thumb);
+  border-radius: 10px;
+  min-height: 10px;
+}
+
+#main-panel::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+  border-radius: var(--border-rad);
+  margin-block: 0.5rem;
+}
+
+/*Grouping common styling*/
+.ai,
+.user {
+  padding: 0.3rem 0.5rem;
+  max-width: 70%;
+  word-wrap: break-word;
+}
+
+.ai p,
+.user p {
+  margin: 0rem 0.5rem;
+}
+
+.ai {
+  background-color: var(--ai-chat);
+  border-radius: 10px 10px 10px 0px;
+  align-self: flex-start;
+}
+
+.user {
+  background-color: var(--user-chat);
+  border-radius: var(--border-rad) var(--border-rad) 0px var(--border-rad);
+  align-self: flex-end;
+}
+
+h1 {
+  font-size: 40px;
+  font-weight: 800;
+  margin: 1rem 0;
+  text-align: center;
+  background: var(--h1); /*Define the bg grad */
+  /*Clip bg to text shape*/
+  -webkit-background-clip: text;
+  background-clip: text;
+  /*Make default text color invisible to reveal bg */
+  -webkit-text-fill-color: transparent;
+  /* Fallback on both light and dark*/
+  color: white;
+}
+
+form {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+
+  /*position: relative;*/
+  width: var(--screen-width);
+  margin: 0 auto;
+
+  /* put the input bar at the bottom.
+  margin-top: auto;
+  margin-bottom: 1%;
+  */
+}
+
+input {
+  box-shadow: var(--inp-shadow); /*shadow for modern feel*/
+}
+
+input[type="text"] {
+  padding: 2.5% 8.5% 2.5% 2.5%; /*extra right padding*/
+  width: 100%;
+  border-radius: var(--round-border-rad);
+  border: none;
+  display: inline-block;
+
+  font-family: var(--font-family); /*applies to both placeholder and regular*/
+  font-size: 1rem;
+  caret-color: var(--caret);
+  color: var(--inp-text);
+  background-color: var(--inp);
+}
+
+input[type="text"]:focus {
+  outline: none;
+}
+
+input[type="submit"] {
+  padding: 1.75% 2.25%;
+  border-radius: var(--round-border-rad);
+  border: none;
+  background-color: var(--submit);
+  color: white;
+  cursor: pointer;
+
+  position: absolute;
+  right: 2%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+input[type="submit"]:hover {
+  background-color: var(--submit-hover);
+}
+
+/* TOGGLE SWITCH AND SLIDER */
+#theme-toggle {
+  display: none; /* Hides checkbox */
+}
+
+.toggle {
+  position: fixed;
+  top: var(--toggle-top);
+  right: var(--toggle-right);
+  width: var(--toggle-width);
+  height: var(--toggle-height);
+  border-radius: var(--toggle-radius);
+  cursor: pointer;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  backdrop-filter: var(--toggle-backdrop);
+  -webkit-backdrop-filter: var(--toggle-backdrop);
+  transition: var(--transition-speed) var(--transition-ease);
+  z-index: var(--toggle-z);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+.toggle:hover {
+  transform: translateY(-1px);
+}
+
+.slider {
+  position: absolute;
+  top: var(--slider-offset);
+  left: var(--slider-offset);
+  width: var(--slider-size);
+  height: var(--slider-size);
+  border-radius: 50%;
+  background: var(--slider-bg);
+  box-shadow: var(--slider-shadow);
+  overflow: hidden; /* clips the ::after to the circle shape */
+  transition: transform var(--transition-speed) var(--slider-curve),
+              background var(--transition-speed) var(--transition-ease);
+}
+
+.slider::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--d-slider-color);
+  opacity: 0;
+  transition: opacity var(--transition-speed) var(--transition-ease);
+  border-radius: 50%;
+}
+
+#theme-toggle:checked + .toggle .slider {
+  transform: translateX(var(--slider-travel));
+}
+
+#theme-toggle:checked + .toggle .slider::after {
+  opacity: 1;
+}
+
+/* Move slider when checked */
+#theme-toggle:checked + .toggle {
+  background: var(--toggle-bg-checked);
+  --slider-bg: var(--d-slider-color);
+}
+
+
+
+/* PAGE */
+.page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--black-blue);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Light overlay transition layer */
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--l-bg);
+  opacity: 1;
+  transition: opacity var(--transition-speed) var(--transition-ease);
+  z-index: 0;
+}
+
+/* Dark overlay transition layer */
+.page::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--d-bg);
+  opacity: 0;
+  transition: opacity var(--transition-speed) var(--transition-ease);
+  z-index: 0;
+}
+
+/* Fade in light layer */
+#theme-toggle:checked ~ .page::before {
+  opacity: 0;
+}
+
+/* Fade out dark layer */
+#theme-toggle:checked ~ .page::after {
+  opacity: 1;
+}
+
+/* Keep content above overlay */
+.page > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* THEME SWITCH: makes the replacements*/
+#theme-toggle:checked ~ .page {
+  color: var(--d-text-color);
+  --panel-color: var(--d-panel-color);
+  --ai-chat: var(--d-ai-chat);
+  --user-chat: var(--d-light-blue);
+  --thumb: var(--d-thumb);
+  --scroll-track: var(--d-scroll-track);
+  --inp-text: var(--d-inp-text);
+  --inp: var(--d-inp);
+  --inp-shadow: var(--d-inp-shadow);
+  --caret: var(--d-caret);
+  --submit: var(--d-submit);
+  --submit-hover: var(--d-submit-hover);
+  --h1: var(--d-h1);
+}
+
+/* =====================================================================
+   ADDITIONS — layout for the description, controls, send icon, examples,
+   help modal, and toggle sun/moon icons. (Everything above is the
+   original theme, kept verbatim.)
+   ===================================================================== */
+
+/* Make the page scrollable/padded so the extra content (subtitle, examples)
+   never gets clipped by the full-height centered layout. */
+.page {
+  box-sizing: border-box;
+  padding: 4rem 1rem 1.5rem;
+  gap: 0.4rem;
+  justify-content: flex-start;
+  overflow-y: auto;
+}
+
+/* Description under the title */
+.subtitle {
+  width: var(--screen-width);
+  margin: 0 auto 1.25rem auto;
+  text-align: center;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  opacity: 0.85;
+}
+
+/* The send button replaces the "^" submit — styled like the original submit */
+.send-btn {
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--submit);
+  color: white;
+  cursor: pointer;
+  box-shadow: var(--inp-shadow);
+
+  position: absolute;
+  right: 1.5%;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 0.2s ease;
+}
+.send-btn:hover {
+  background-color: var(--submit-hover);
+}
+.search {
+  position: relative;
+}
+
+/* Glass buttons (help "?" and clear chat) */
+.glass-btn {
+  font-family: var(--font-family);
+  color: inherit;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  backdrop-filter: var(--toggle-backdrop);
+  -webkit-backdrop-filter: var(--toggle-backdrop);
+  box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+.glass-btn:hover {
+  transform: translateY(-1px);
+  background: var(--toggle-bg-checked);
+}
+.glass-btn.round {
+  position: fixed;
+  top: var(--toggle-top);
+  left: 20px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  font-weight: 700;
+  z-index: var(--toggle-z);
+}
+.glass-btn.pill {
+  border-radius: var(--toggle-radius);
+  padding: 0.35rem 0.9rem;
+  font-size: 0.85rem;
+}
+
+/* Row above the chat panel holding the Clear chat button */
+.panel-head {
+  width: var(--screen-width);
+  margin: 0 auto 0.5rem auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Example question chips at the bottom */
+.examples {
+  width: var(--screen-width);
+  margin: 1rem auto 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+.example-chip {
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  color: inherit;
+  background: var(--toggle-bg);
+  border: 1px solid var(--toggle-border);
+  backdrop-filter: var(--toggle-backdrop);
+  -webkit-backdrop-filter: var(--toggle-backdrop);
+  border-radius: var(--toggle-radius);
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, background 0.2s ease;
+}
+.example-chip:hover {
+  transform: translateY(-1px);
+  background: var(--toggle-bg-checked);
+}
+
+/* Sources / resources appended inside an AI bubble */
+.meta {
+  margin: 0.5rem 0.5rem 0.1rem 0.5rem;
+  font-size: 0.78rem;
+  opacity: 0.85;
+  line-height: 1.4;
+}
+.meta .meta-label {
+  font-weight: 600;
+}
+.meta a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+/* Typing indicator */
+.typing span {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  margin: 0 1px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.5;
+  animation: blink 1.2s infinite both;
+}
+.typing span:nth-child(2) { animation-delay: 0.2s; }
+.typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes blink {
+  0%, 80%, 100% { opacity: 0.25; }
+  40% { opacity: 0.9; }
+}
+
+/* Toggle sun/moon icons */
+.toggle .ico {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  line-height: 1;
+  z-index: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-speed) var(--transition-ease);
+}
+.toggle .ico.sun { left: 7px; color: #f6c945; opacity: 1; }
+.toggle .ico.moon { right: 7px; color: #cfe3ff; opacity: 0.55; }
+#theme-toggle:checked + .toggle .ico.sun { opacity: 0.45; }
+#theme-toggle:checked + .toggle .ico.moon { opacity: 1; }
+
+/* Help modal */
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgb(0 0 0 / 45%);
+  z-index: 2000;
+}
+.modal[hidden] {
+  display: none;
+}
+.modal-content {
+  position: relative;
+  width: min(90%, 460px);
+  background: rgb(20 30 40 / 92%);
+  color: white;
+  border: 1px solid var(--toggle-border);
+  border-radius: var(--round-border-rad);
+  padding: 1.75rem 1.75rem 1.5rem;
+  box-shadow: 0 10px 40px rgb(0 0 0 / 45%);
+  backdrop-filter: var(--toggle-backdrop);
+  -webkit-backdrop-filter: var(--toggle-backdrop);
+}
+.modal-content h2 {
+  margin-bottom: 0.85rem;
+  font-weight: 800;
+}
+.modal-content ol {
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.92rem;
+  line-height: 1.45;
+}
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.modal-close:hover { opacity: 1; }

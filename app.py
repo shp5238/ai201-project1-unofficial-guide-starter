@@ -1,91 +1,52 @@
 """
-Milestone 5 — Query interface
+Milestone 5 — Query interface (custom web UI)
 University Career Assistant (RAG)
 
-A Gradio UI over the grounded `ask()` pipeline in rag.py:
+A small Flask server over the grounded `ask()` pipeline in rag.py:
   question  ->  retrieve top-5 chunks  ->  Groq llama-3.3-70b (grounded)  ->  answer + sources
+
+It serves a single-page chat UI (templates/index.html + static/) and one JSON
+endpoint, POST /api/ask, that the page calls with fetch().
 
 Run:
     python app.py
-then open the local URL it prints (default http://127.0.0.1:7860).
+then open http://127.0.0.1:7860 in your browser.
 """
 
-import gradio as gr
+from flask import Flask, jsonify, render_template, request
 
-from rag import ask, DEFAULT_TOP_K
+from rag import ask, DEFAULT_TOP_K, EVAL_QUESTIONS
 
-EXAMPLES = [
-    "What are some common skills in Data Science student resumes?",
-    "For a job interview, what are some tips for my thank you note?",
-    "I want to network but don't know where to start. What are some USD-specific resources?",
-    "Why should I use AI in my job preparation process?",
-    "How do I find salary and job outlook information?",
-]
+app = Flask(__name__)
 
 
-def answer_question(question: str):
-    """Run one question through the RAG pipeline and format the UI outputs."""
-    question = (question or "").strip()
+@app.route("/")
+def index():
+    # The example questions come straight from rag.EVAL_QUESTIONS so the chips
+    # in the UI stay in sync with the planning.md evaluation plan.
+    return render_template("index.html", examples=EVAL_QUESTIONS)
+
+
+@app.route("/api/ask", methods=["POST"])
+def api_ask():
+    data = request.get_json(silent=True) or {}
+    question = (data.get("question") or "").strip()
     if not question:
-        return "Please enter a question.", "", ""
+        return jsonify({"error": "Please enter a question."}), 400
 
     try:
         result = ask(question, k=DEFAULT_TOP_K)
-    except Exception as exc:
-        return f"⚠️ Error: {exc}", "", ""
+    except Exception as exc:  # surface config/runtime errors to the UI
+        return jsonify({"error": str(exc)}), 500
 
-    answer = result["answer"]
-
-    # Sources — attached programmatically from the retrieved chunks' metadata.
-    if result["sources"]:
-        sources_md = "**Sources**\n" + "\n".join(
-            f"- {s}" for s in result["sources"])
-    else:
-        sources_md = "_No sources — the question is outside the available documents._"
-
-    # Recommended website links (only shown when the question matches their topics).
-    if result["resources"]:
-        resources_md = "**You may also find these helpful**\n" + "\n".join(
-            f"- [{r['name']}]({r['url']}) — {r['description']}"
-            for r in result["resources"])
-    else:
-        resources_md = ""
-
-    return answer, sources_md, resources_md
-
-
-with gr.Blocks(title="USD Career Assistant") as demo:
-    gr.Markdown(
-        "# 🎓 University of San Diego — Career Assistant\n"
-        "Ask about resumes, interviews, networking, LinkedIn, internships, and "
-        "using AI in your career search. Answers are grounded **only** in official "
-        "USD career-center documents; if the documents don't cover your question, "
-        "the assistant will say so."
-    )
-
-    with gr.Row():
-        question = gr.Textbox(
-            label="Your question",
-            placeholder="e.g. What are some tips for my interview thank-you note?",
-            lines=2,
-            scale=4,
-        )
-    with gr.Row():
-        submit = gr.Button("Ask", variant="primary")
-        clear = gr.Button("Clear")
-
-    answer = gr.Markdown(label="Answer")
-    sources = gr.Markdown()
-    resources = gr.Markdown()
-
-    gr.Examples(examples=EXAMPLES, inputs=question)
-
-    submit.click(answer_question, inputs=question,
-                 outputs=[answer, sources, resources])
-    question.submit(answer_question, inputs=question,
-                    outputs=[answer, sources, resources])
-    clear.click(lambda: ("", "", "", ""), outputs=[question, answer, sources, resources])
+    # Only return what the UI renders. Sources are computed programmatically in
+    # ask() from chunk metadata (never authored by the model).
+    return jsonify({
+        "answer": result["answer"],
+        "sources": result["sources"],
+        "resources": result["resources"],
+    })
 
 
 if __name__ == "__main__":
-    demo.launch()
+    app.run(host="127.0.0.1", port=7860, debug=False)
